@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+  <style>
+    ._3_20 { 
+        overflow: hidden;
+    }
+    .query-history-container {
+        max-height: 300px; /* Set the maximum height for the container */
+        overflow-y: auto; /* Enable vertical scrolling */
+        background-color: #333; /* Dark grey background color */
+        padding: 10px; /* Add padding for better visual appearance */
+        color: rgba(0, 0, 0, 1);
+        width:1000px;
+    }
+    .move-down{
+      top:40px;
+    }
+    .query-history-scroll {
+        overflow-y: auto; /* Enable vertical scrolling within the container */
+    }
+    .user-message {
+        color: #fff; /* White text color for user messages */
+    }
+
+    .chatbot-message {
+        color: #ccc; /* Light grey text color for chatbot messages */
+    }
+    .e3_20 { 
+        background-color: rgba(255, 255, 255, 1);
+        width: 1512px;
+        height: 982px;
+        position: absolute;
+    }
+    .e3_21 { 
+        background-color: rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+        width: 1512px;
+        height: 982px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    .e3_22 { 
+        background-color: #ffffff;
+        width: 325px;
+        height: 63px;
+        position: absolute;
+        left: 349px;
+        top: 350px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        text-align: center; /* Center the text horizontally */
+        display: flex;
+        align-items: center; /* Center the text vertically */
+    }
+    .e3_23 { 
+        background-color: rgba(43.1715240329504, 119.58303362131119, 209.2834523320198, 1);
+        width: 90px;
+        height: 63px;
+        position: absolute;
+        left: 689px;
+        top: 350px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    .e3_24 { 
+        color: rgba(0, 0, 0, 1);
+        width: 425px;
+        height: 57px;
+        position: absolute;
+        left: 394px;
+        top: 711px;
+        font-family: Inter;
+        text-align: left;
+        font-size: 25px;
+        letter-spacing: 0;
+    }
+    .e3_25 { 
+        color: rgba(0, 0, 0, 1);
+        width: 380px;
+        height: 28px;
+        position: absolute;
+        left: 700px;
+        top: 25px;
+        font-family: Inter;
+        text-align: left;
+        font-size: 25px;
+        letter-spacing: 0;
+    }
+    .e3_26 { 
+        color: rgba(0, 0, 0, 1);
+        width: 151px;
+        height: 57px;
+        position: absolute;
+        left: 774px;
+        top: 813px;
+        font-family: Inter;
+        text-align: left;
+        font-size: 25px;
+        letter-spacing: 0;
+    }
+    .e3_27 { 
+        background-color: rgba(134.50586646795273, 134.50586646795273, 134.50586646795273, 1);
+        width: 296px;
+        height: 982px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    .e3_28 { 
+        background-color: rgba(94.01879578828812, 94.01879578828812, 94.01879578828812, 1);
+        width: 296px;
+        height: 88px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    .e3_29 { 
+        background-color: rgba(94.01879578828812, 94.01879578828812, 94.01879578828812, 0.6000000238418579);
+        width: 296px;
+        height: 89px;
+        position: absolute;
+        left: 0px;
+        top: 88px;
+        border: 1px solid rgba(0, 0, 0, 1);
+    }
+    .e3_30 { 
+        background-color: rgba(94.01879578828812, 94.01879578828812, 94.01879578828812, 0.6000000238418579);
+        width: 296px;
+        height: 88px;
+        position: absolute;
+        left: 0px;
+        top: 265px;
+        border: 1px solid rgba(0, 0, 0, 1);
+    }
+    .e3_31 { 
+        background-color: rgba(94.01879578828812, 94.01879578828812, 94.01879578828812, 0.6000000238418579);
+        width: 296px;
+        height: 88px;
+        position: absolute;
+        left: 0px;
+        top: 177px;
+        border: 1px solid rgba(0, 0, 0, 1);
+    }
+    .e3_32 { 
+        color: rgba(245.00000059604645, 245.00000059604645, 245.00000059604645, 1);
+        width: 159px;
+        height: 28px;
+        position: absolute;
+        left: 85px;
+        top: 26px;
+        font-family: Inter;
+        text-align: left;
+        font-size: 25px;
+        letter-spacing: 0;
+    }
+    .e3_33 { 
+        color: rgba(245.00000059604645, 245.00000059604645, 245.00000059604645, 1);
+        width: 208px;
+        height: 28px;
+        position: absolute;
+        left: 40px;
+        top: 119px;
+        font-family: Inter;
+        text-align: left;
+        font-size: 25px;
+        letter-spacing: 0;
+    }
+    .e3_34 { 
+        color: rgba(245.00000059604645, 245.00000059604645, 245.00000059604645, 1);
+        width: 131px;
+        height: 28px;
+        position: absolute;
+        left: 117px;
+        top: 207px;
+        font-family: Inter;
+        text-align: left;
+        font-size: 25px;
+        letter-spacing: 0;
+    }
+    .e3_35 { 
+        color: rgba(245.00000059604645, 245.00000059604645, 245.00000059604645, 1);
+        width: 129px;
+        height: 28px;
+        position: absolute;
+        left: 90px;
+        top: 295px;
+        font-family: Inter;
+        text-align: left;
+        font-size: 25px;
+        letter-spacing: 0;
+    }
+        .content {
+        position: relative; /* Ensure the content div is positioned relative to its container */
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    /* Adjust the form styles */
+    form {
+        margin-top: 20px; /* Add margin to separate form from the query history */
+    }
+</style>
+<script>
+  // JavaScript to scroll to the bottom of the container
+  function scrollToBottom() {
+      debugger;
+      var container = document.getElementById('query-history-container');
+      if (container != null){
+      container.scrollTop = container.scrollHeight; 
+  }
+}
+
+  // Call scrollToBottom() after the page is loaded
+  window.onload = function () {
+      scrollToBottom();
+  };
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Athena Chat</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5000/static/nicepage.css" media="screen">
+<link rel="stylesheet" href="http://127.0.0.1:5000/static/Athena-Chat.css" media="screen">
+    <script class="u-script" type="text/javascript" src="http://127.0.0.1:5000/static/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="http://127.0.0.1:5000/static/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 6.0.3, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/QuadwaveLogo.png"
+}</script>
+    <meta name="theme-color" content="#3a50f9">
+    <meta property="og:title" content="Athena Chat">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-d497"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="Home.html" class="u-image u-logo u-image-1" title="Home" data-image-width="6000" data-image-height="2500">
+          <img src="http://127.0.0.1:5000/static/images/QuadwaveLogo.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-hamburger u-offcanvas u-menu-1" data-responsive-from="XL">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+            <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-nav-container">
+            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Home.html" style="padding: 10px 0px;">Home</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Talent-Performance.html" style="padding: 10px 0px;">Talent Performance</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Talent-Development.html" style="padding: 10px 0px;">Talent Development</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Talent-Acquisition.html" style="padding: 10px 0px;">Talent Acquisition</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="HR-Analytics.html" style="padding: 10px 0px;">HR Analytics</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Athena-Chat.html" style="padding: 10px 0px;">Athena Chat</a>
+</li></ul>
+          </div>
+          <div class="u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Talent-Performance.html">Talent Performance</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Talent-Development.html">Talent Development</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Talent-Acquisition.html">Talent Acquisition</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="HR-Analytics.html">HR Analytics</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Athena-Chat.html">Athena Chat</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-a790">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class = content>
+          {% if query_history %}
+              <div class="query-history-container" id="query-history-container">
+                  <div class="query-history-scroll">
+                      <ul>
+                          {% for entry in query_history %}
+                              <li>
+                                  <p class="user-message">User: {{ entry['question'] }}</p>
+                                  <p class="chatbot-message">Chatbot: {{ entry['answer'] }}</p>
+                              </li>
+                          {% endfor %}
+                      </ul>
+                  </div>
+              </div>
+          {% endif %}
+  
+          <form action="/submit" method="post">
+            <!--  <label for="user_input">Enter a query:</label> -->
+              <input class ="e3_22" type="text" id="user_input" name="user_input">
+              <button class = "e3_23" type="submit">Submit</button>
+          </form>
+      </div>
+    </section>
+    
+     
+    
+    <footer class="move-down u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-7512"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Contact Quadwave Consulting Private Limited to Know more about our AI solutions.</p>
+      </div></footer>
+    <section class="move-down u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Web Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.online" target="_blank">
+        <span>Free Website Builder</span>
+      </a>. 
+    </section>
+  
+</body>
+</html>
